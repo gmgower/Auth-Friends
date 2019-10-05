@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { connect } from 'react-redux'
-import { deleteFriend, updateFriend } from '../store/actions/index'
+import { deleteFriend, updateFriend } from '../store/actions'
 
 function FriendCard({ friend, deleteFriend, updateFriend }) {
     const [updatedFriendName, setupdatedFriendName] = useState('')
