@@ -32,7 +32,7 @@ export default class Login extends Component {
     render() {
         return (
             <div>
-                <form>
+                <form onSubmit={this.login}>
                     <input 
                     type='text'
                     name='username'
