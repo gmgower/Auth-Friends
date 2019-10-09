@@ -18,11 +18,12 @@ function App() {
           <li>
             <Link to={'/friendlist'}>Friend List</Link>
           </li>
-        </ul>
-        {/* <Route exact path='/' component={Home} /> */}
-        <Route path='/login' component={Login} />
+        </ul> 
+        {/* pass our own props  render={props} => <Login {...props}*/}
+        <Route path='/login' render={(props) =>  <Login {...props}/>}/> 
         <PrivateRoute exact path='/friendlist' component={AddFriend} />
-        <PrivateRoute exact path='/friendlist' component={FriendList} />
+        {/* pass our own props name="Mada" */}
+        <PrivateRoute exact path='/friendlist' name='Mada' component={FriendList} /> 
       </header>
     </div>
   );

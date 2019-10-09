@@ -4,7 +4,9 @@ import FriendCard from './FriendCard';
 
 import { getFriends } from '../store/actions';
 
-function FriendList({ getFriends, friends, isFetching }) {
+function FriendList({ getFriends, friends, isFetching, name}) {
+  
+  console.log(name)
 
   useEffect(() => {
     getFriends();

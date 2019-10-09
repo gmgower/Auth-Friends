@@ -10,15 +10,8 @@ import { Route, Redirect } from 'react-router-dom';
 const PrivateRoute = ({ component: Component, ...rest }) => {
   // const Component = props.component
   return (
-    <Route
-      {...rest}
-      render={() => {
-        if (localStorage.getItem('token')) {
-          // if token is in localstorage, render the given component
-          return <Component />;
-        } else {
-          return <Redirect to="/login" />;
-        }
+    // name="Mada" from App.js PrivateRoute, props pass by ...rest, pass ...rest to <Component />
+    <Route {...rest} render={(props) => { if (localStorage.getItem('token')) {  return <Component {...rest} {...props}/>; } else {return <Redirect to="/login" />; }
       }}
     />
   );
